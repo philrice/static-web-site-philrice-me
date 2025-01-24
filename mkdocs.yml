@@ -1,1 +1,4 @@
 site_name: Phil Rice - Tech Blog
+site_url: https://philrice.co.uk
+theme:
+  name: material
