@@ -1,17 +1,13 @@
-# Welcome to MkDocs
+# Phil Rice Blog
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Just setting this up , so proper content coming soon :-)
 
-## Commands
+Probably no one reading this but if there is , what im working on ...
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- need to adjust the mkdocs styling and navigation, add a few plugins etc 
+- need to expand the terraform ive used to depoy the Azure Static Web App this is hosted on to include/ handle the custom domain name config Ive added
+- need to document the entire config in the github repo well 
+- probably add branch protection rules so that only pull requests can be used to commit. There is already a github action in place that will handle deployments based on that and close the PR
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+.... oh yeah, and write soem content
