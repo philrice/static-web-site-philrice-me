@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://philrice.co.uk/</loc>
+         <lastmod>2025-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://philrice.co.uk/blog/</loc>
+         <lastmod>2025-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://philrice.co.uk/blog/2025/02/04/first-post/</loc>
+         <lastmod>2025-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://philrice.co.uk/blog/archive/2025/</loc>
+         <lastmod>2025-02-05</lastmod>
+    </url>
 </urlset>
