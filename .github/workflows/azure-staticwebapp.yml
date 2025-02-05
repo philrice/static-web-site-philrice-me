@@ -39,12 +39,13 @@ jobs:
     runs-on: ubuntu-latest
     name: MkDocs Build
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Build with MkDocs
-      uses: romw314/mkdocs-action@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build with MkDocs
+        uses: romw314/mkdocs-action@v2
 
   build_and_deploy_job:
+    needs: mkdocs_build
     permissions:
       contents: read # for actions/checkout to fetch code
       pull-requests: write # for Azure/static-web-apps-deploy to comment on PRs
