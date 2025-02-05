@@ -46,7 +46,7 @@ jobs:
         uses: romw314/mkdocs-action@v2
 
   build_and_deploy_job:
-    needs: mkdocs_build
+    needs: build
     permissions:
       contents: read # for actions/checkout to fetch code
       pull-requests: write # for Azure/static-web-apps-deploy to comment on PRs
