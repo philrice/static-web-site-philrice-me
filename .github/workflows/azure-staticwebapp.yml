@@ -31,18 +31,17 @@ permissions:
 
 
 jobs:
-  mkdocs_build:
+  build:
     permissions:
       contents:  write 
       pull-requests: write
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: MkDocs Build
+    name: MkDocs Build Site
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set executable permission on entrypoint.sh
-        run: chmod +x /entrypoint.sh
+      - uses: actions/checkout@v4
+        with: 
+          submodules: true
       - name: Build with MkDocs
         uses: romw314/mkdocs-action@v2
 
