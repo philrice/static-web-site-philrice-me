@@ -21,9 +21,6 @@ on:
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  config-file: "mkdocs.yml"
-  output-dir: "/site/"
-  work-dir: "./"
   APP_LOCATION: "/site/" # location of your client code
   API_LOCATION: "" # location of your api source code - optional
   APP_ARTIFACT_LOCATION: "./" # location of client code build output
@@ -47,6 +44,10 @@ jobs:
           submodules: true
       - name: Build with MkDocs
         uses: romw314/mkdocs-action@v2
+        with:
+          config-file: "mkdocs.yml"
+          output-dir: "/site/"
+          work-dir: "./"
 
   build_and_deploy_job:
     needs: build
