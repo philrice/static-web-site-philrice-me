@@ -5,4 +5,6 @@ theme:
 
 plugins:
   - search
-  - blog
+  - blog:
+      archive: false
+      blog_dir: .

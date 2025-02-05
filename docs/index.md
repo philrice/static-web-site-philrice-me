@@ -1,4 +1,4 @@
-# Phil Rice Blog
+# Welcome
 
 Just setting this up , so proper content coming soon :-)
 
@@ -10,4 +10,4 @@ Probably no one reading this but if there is , what im working on ...
 - probably add branch protection rules so that only pull requests can be used to commit. There is already a github action in place that will handle deployments based on that and close the PR
 
 
-.... oh yeah, and write soem content
+.... oh yeah, and write some content
