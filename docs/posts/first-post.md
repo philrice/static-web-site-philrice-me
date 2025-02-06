@@ -4,6 +4,8 @@ date: 2025-02-06
 authors: [philrice]
 categories:
   - General
+links:
+  - posts/second-test.md
  
 ---
 

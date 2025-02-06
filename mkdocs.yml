@@ -1,5 +1,6 @@
 site_name: Phil Rice - Blog
 site_url: https://philrice.me
+repo_url: https://github.com/philrice/static-web-site-philrice-me
 theme:
   name: material
   palette:
@@ -12,9 +13,9 @@ theme:
     logo: material/code-tags
 
   features:
-    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.footer
 
 plugins:
   - search
@@ -26,3 +27,8 @@ plugins:
   - tags
 nav:
   - index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/phildrice
