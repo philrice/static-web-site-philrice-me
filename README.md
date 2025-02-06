@@ -1,10 +1,15 @@
 # philrice-uk
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/philrice/static-web-site-philrice-me)
+
+
 
 Repository containing the code for the philrice.uk blog.
 
 ## MkDocs - Static Web Site Generation
 
 The site is generated from markdown files using the MkDocs static site generator. MkDocs converts the markdown into HTML and builds a working site with the required CSS, JS, and other supporting features like site search.
+
+[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
 
 ### Installation / Local Testing
 

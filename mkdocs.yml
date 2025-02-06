@@ -1,10 +1,28 @@
-site_name: Phil Rice - Tech Blog
-site_url: https://philrice.co.uk
+site_name: Phil Rice - Blog
+site_url: https://philrice.me
 theme:
   name: material
+  palette:
+    scheme: slate
+    primary: orange
+    accent: deep orange
+  font:
+    text: Roboto Mono
+  icon:
+    logo: material/code-tags
+
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
 
 plugins:
   - search
   - blog:
-      archive: false
+      archive: true
       blog_dir: .
+      blog_toc: true
+  - search
+  - tags
+nav:
+  - index.md
