@@ -14,3 +14,10 @@ module "avm-res-web-staticsite" {
   name = var.name
   resource_group_name = azurerm_resource_group.rg-sws.name
 }
+
+
+resource "azurerm_static_web_app_custom_domain" "sws-domain" {
+  static_web_app_id = module.avm-res-web-staticsite.resource_id
+  domain_name       = "www.philrice.me"
+  validation_type   = "cname-delegation"
+}
