@@ -3,7 +3,7 @@
 
 
 
-Repository containing the code for the philrice.uk blog.
+Repository containing the code for the www.philrice.me blog.
 
 ## MkDocs - Static Web Site Generation
 
@@ -14,6 +14,7 @@ The site is generated from markdown files using the MkDocs static site generator
 ### Installation / Local Testing
 
 First clone this repo to your local environment and open in vscode, or you can also open in Github Codespaces or as a devcontainer from vscode
+The devcontainer config in this repo includes all the dependencies needed.
 
 Install MkDocs using pip:
 
@@ -23,12 +24,7 @@ pip install mkdocs
 
 ### Usage
 
-To create a new project, run:
 
-```sh
-mkdocs new my-project
-cd my-project
-```
 
 To serve the site locally, use:
 
@@ -36,11 +32,26 @@ To serve the site locally, use:
 mkdocs serve
 ```
 
+This will serve the site on localhost so you can make change and see them loaded in realtime.
+
 To build the site, run:
 
 ```sh
 mkdocs build
 ```
+
+NB. It is not required to build the site as the GitHb Workflow has a job that will build the site and commit the updated code to the site directory in the repo, before then deploying to the Azure Static Web Site. This does mean that the site directory content is then new so you will need to git pull before pushing any new commits to avoid errors.
+
+### Azure Configuration & Authentication
+
+Ensure you have the necessary Azure credentials and permissions to deploy the resources. You can configure the Azure CLI, log in and set the subscription that will be targeted using:
+
+```sh
+az login
+az account set --subscription "<subscription ID>"
+```
+You can also use other methods to authenticate such as via an app registration or federated workload identity in azure. You will need to adjust `providers.tf` to use the method you want.
+
 
 ## Infrastructure
 
@@ -48,7 +59,7 @@ The site is hosted on an Azure Static Web App, which is deployed as Infrastructu
 
 ### Deployment
 
-To deploy the site, follow these steps:
+To deploy the site, cd into the `infrastructure` directory and follow these steps:
 
 1. Initialize Terraform:
 
@@ -68,15 +79,28 @@ To deploy the site, follow these steps:
     terraform apply
     ```
 
-### Azure Configuration
-
-Ensure you have the necessary Azure credentials and permissions to deploy the resources. You can configure the Azure CLI, log in and set the subscription thhat will be targeted using:
-
-```sh
-az login
-az account set --subscription "<subscription ID>"
-```
-
 ### CI/CD with GitHub Actions
 
-In the `.github/workflows` directory there is a GitHub Actions workflow file `azure-staticwebapp.yaml` that will deploy the site code to the Azure Static Web App
+In the `.github/workflows` directory there is a GitHub Actions workflow file `azure-staticwebapp.yaml` that will:
+- run `mkdocs build` to build the site 
+- build the deployment package and deploy the site code to the Azure Static Web App
+
+## Creating Posts
+
+Post should be written in markdown and saved in the `/docs/posts/` directory.
+
+For each post you need to add some metadata that wll be used to control certain aspects  :
+
+```
+---
+draft: false 
+date: 2025-02-06
+authors: [philrice]
+categories:
+  - General
+links:
+  - posts/second-test.md
+ 
+---
+
+```
