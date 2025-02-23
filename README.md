@@ -3,7 +3,7 @@
 
 
 
-Repository containing the code for the www.philrice.me blog.
+Repository containing the code for the www.philrice.me blog that is a static website.
 
 ## MkDocs - Static Web Site Generation
 
