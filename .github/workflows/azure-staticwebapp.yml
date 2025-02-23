@@ -32,41 +32,8 @@ env:
 permissions:
   contents: read
 
-
 jobs:
-  build:
-    permissions:
-      contents: write 
-      pull-requests: write
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: MkDocs Build Site
-    steps:
-      - uses: actions/checkout@v4
-        with: 
-          submodules: true
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip     # install pip
-          python3 -m pip install mkdocs            # install mkdocs 
-          python3 -m pip install mkdocs-material   # install material theme
-      - name: MkDocs Build
-        run: |
-          mkdocs build
-      - name: Commit built site
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add site
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m 'Github workflow build of MkDocs site'
-            git push
-          else
-            echo "No changes to commit"
-          fi
-
   build_and_deploy_job:
-    needs: build
     permissions:
       contents: read # for actions/checkout to fetch code
       pull-requests: write # for Azure/static-web-apps-deploy to comment on PRs
@@ -77,8 +44,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Pull latest changes
-        run: git pull
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip     # install pip
+          python3 -m pip install mkdocs            # install mkdocs 
+          python3 -m pip install mkdocs-material   # install material theme
+      - name: MkDocs Build
+        run: |
+         mkdocs build
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
