@@ -14,6 +14,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  use_cli = true
+  use_cli         = true
   subscription_id = "dbad9049-8bd0-437c-a983-260131119b42"
 }
