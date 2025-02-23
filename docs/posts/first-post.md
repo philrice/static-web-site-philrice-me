@@ -19,7 +19,7 @@ Unlikely anyone / many reading this yet but if there is , this is what im workin
 - need to expand the terraform ive used to depoy the Azure Static Web App this is hosted on to include/ handle the custom domain name config Ive added
 - need to document the entire config in the github repo well 
 - probably add branch protection rules so that only pull requests can be used to commit. There is already a github action in place that will handle deployments based on that and close the PR
-
+- just updated the action to not take the /site directly and an commit it
 <!-- more -->
 .... oh yeah, and write some content.
 
