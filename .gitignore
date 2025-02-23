@@ -1,6 +1,6 @@
 
 # MkDocs 
-/site/*
+**/site/*
 
 # Local .terraform directories
 **/.terraform/*
