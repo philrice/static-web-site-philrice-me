@@ -1,4 +1,4 @@
-# philrice-uk
+# www.philrice.me - Static Web Site Hosted Blog
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/philrice/static-web-site-philrice-me)
 
 
