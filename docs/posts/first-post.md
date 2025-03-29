@@ -20,6 +20,7 @@ Unlikely anyone / many reading this yet but if there is , this is what im workin
 - need to document the entire config in the github repo well 
 - probably add branch protection rules so that only pull requests can be used to commit. There is already a github action in place that will handle deployments based on that and close the PR
 - just updated the action so that it does not commit the builb of the  /site directory to the repo, as not required and we can just build and deploy. Better to not have /site in the repo as ee then need to pull to get in synch and this hinders the workflow.
+- change azure subscription this is hosted on to a different one dedicated to purely homelab and lab deployments - DONE
 <!-- more -->
 .... oh yeah, and write some content...
 

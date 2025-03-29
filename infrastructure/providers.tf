@@ -10,10 +10,17 @@ terraform {
       version = ">= 3.5.0, < 4.0.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "rg-lab-tfstate"
+    storage_account_name = "labtfstate28798"
+    container_name       = "labtfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
   features {}
   use_cli         = true
-  subscription_id = "dbad9049-8bd0-437c-a983-260131119b42"
+  subscription_id = "294d08d4-5eff-4a0b-83fd-c8d11ca62d39"
 }
+
